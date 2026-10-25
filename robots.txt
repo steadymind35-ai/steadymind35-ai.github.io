@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://steadymind35.com/sitemap.xml

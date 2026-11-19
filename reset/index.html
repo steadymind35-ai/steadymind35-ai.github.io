@@ -53,6 +53,9 @@
       </div>
       <input type="hidden" name="ml-submit" value="1">
       <input type="hidden" name="anticsrf" value="true">
+      <input type="hidden" name="fields[utm_source]" value="">
+      <input type="hidden" name="fields[utm_medium]" value="">
+      <input type="hidden" name="fields[utm_campaign]" value="">
       <button type="submit" class="btn">Send me the free reset</button>
     </form>
     <p class="form-small">We'll only use your email to send what you asked for. See our <a href="/privacy/">privacy notice.</a> Steady Mind 35 shares general wellness information, not medical advice.</p>
@@ -76,5 +79,13 @@
   </div>
 </footer>
 <script src="/assets/reset.js" defer></script>
+<script>
+  window.goatcounter = {
+    path: function () { return location.pathname || '/'; }
+  };
+</script>
+<script data-goatcounter="https://steadymind35.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"
+        crossorigin="anonymous"></script>
 </body>
 </html>

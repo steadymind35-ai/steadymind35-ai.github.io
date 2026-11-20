@@ -9,6 +9,17 @@
   var err = form.querySelector('.form-error');
   var btn = form.querySelector('button[type=submit]');
 
+  // Copy campaign tags from the URL into hidden fields. No cookies or storage.
+  (function fillUtm() {
+    var params = new URLSearchParams(window.location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (key) {
+      var raw = params.get(key);
+      if (!raw) return;
+      var input = form.querySelector('input[name="fields[' + key + ']"]');
+      if (input) input.value = raw.replace(/[^\w.-]/g, '').slice(0, 80);
+    });
+  })();
+
   function fail(msg) {
     err.textContent = msg || 'Something went wrong, please try again';
     err.hidden = false;
